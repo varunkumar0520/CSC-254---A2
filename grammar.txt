@@ -1,0 +1,13 @@
+P -> SL $$
+SL -> S SL | EPSILON
+S -> int id := E | real id := E | id := E | read TP id | write E | if C SL fi | do SL od | check C
+TP -> int | real | EPSILON
+C -> E CO E
+E -> T TT
+TT -> AO T TT | EPSILON
+T -> F FT
+FT -> MO F FT | EPSILON
+F -> ( E ) | id | i_lit | r_lit | trunc ( E ) | float ( E )
+CO -> == | != | < | > | <= | >=
+AO -> + | -
+MO -> * | /
